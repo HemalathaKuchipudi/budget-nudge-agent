@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NudgeAI Report</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            padding: 40px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .value {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📊 Financial Overview</h2>
+
+    <div class="card">
+        <p>Total Spend: <span class="value">₹{{ data.total_spend }}</span></p>
+        <p>Food Spend: <span class="value">₹{{ data.food_spend }}</span></p>
+        <p>Order Count: <span class="value">{{ data.order_count }}</span></p>
+        <p>Top Vendor: <span class="value">{{ data.top_vendor }}</span></p>
+        <p>Vendor Ratio: <span class="value">{{ data.vendor_ratio }}%</span></p>
+        <p>Late Night Ratio: <span class="value">{{ data.late_ratio }}%</span></p>
+        <p>Projected Spend: <span class="value">₹{{ data.projected_spend }}</span></p>
+    </div>
+
+    <div class="card">
+        <p>Addiction Score: <span class="value">{{ data.addiction_score }}</span></p>
+        <p>Financial Health Index: <span class="value">{{ data.financial_health_index }}</span></p>
+        <p>Risk Category: <span class="value">{{ data.risk_category }}</span></p>
+    </div>
+
+    <form action="/" method="GET">
+        <button class="back-btn">⬅ Back to Dashboard</button>
+    </form>
+
+</body>
+</html>
