@@ -128,6 +128,14 @@ export async function renderDashboard(app, userId) {
       </div>
 
     </div>
+    <div class="ai-nudge-card">
+  <div class="ai-nudge-header">
+    🤖 Smart Budget Nudge
+  </div>
+  <div class="ai-nudge-body">
+    ${data.nudge}
+  </div>
+</div>
   `;
 
   /* =========================

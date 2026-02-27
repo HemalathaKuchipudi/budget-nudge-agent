@@ -9,6 +9,8 @@ from services.calculations import (
     calculate_addiction_score
 )
 
+from services.nudge_engine import generate_static_llm_nudge
+
 app = Flask(__name__)
 CORS(app)
 
@@ -65,11 +67,20 @@ def dashboard(user_id):
     food_spend = calculate_food_spend(user_transactions)
     addiction_score = calculate_addiction_score(user_transactions)
 
+    # 🔥 Generate Static LLM-style Nudge
+    nudge = generate_static_llm_nudge(
+        monthly_limit,
+        food_spend,
+        addiction_score,
+        user_transactions
+    )
+
     return jsonify({
         "monthly_limit": monthly_limit,
         "food_spend": food_spend,
         "addiction_score": addiction_score,
-        "transactions": user_transactions
+        "transactions": user_transactions,
+        "nudge": nudge
     })
 
 
