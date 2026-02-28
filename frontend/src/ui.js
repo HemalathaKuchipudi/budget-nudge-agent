@@ -6,17 +6,43 @@ import Chart from "chart.js/auto";
 ========================= */
 export function renderLogin(app, onLogin) {
   app.innerHTML = `
-    <div class="login-container">
-      <h1>Budget Nudge Agent</h1>
+   <div class="login-wrapper">
 
-      <input id="name" placeholder="Full Name" />
-      <input id="salary" type="number" placeholder="Monthly Salary" />
-      <input id="expenses" type="number" placeholder="Required Expenses" />
-      <input id="emi" type="number" placeholder="Total EMI" />
+    <div class="login-card">
+      <h1 class="login-title">NudgeAI</h1>
+      <p class="login-subtitle">Behavioral Budget Intelligence</p>
 
-      <button id="loginBtn">Start Smart Budgeting</button>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input id="name" placeholder="Enter your full name" />
+      </div>
+
+      <div class="form-group">
+        <label>Monthly Salary (₹)</label>
+        <input id="salary" type="number" placeholder="Enter your monthly salary" />
+      </div>
+
+      <div class="form-group">
+        <label>Monthly Required Expenses (₹)</label>
+        <input id="expenses" type="number" placeholder="Rent, utilities, insurance, etc." />
+      </div>
+
+      <div class="form-group">
+        <label>Total Monthly EMI (₹)</label>
+        <input id="emi" type="number" placeholder="Loan, car, home EMI, etc." />
+      </div>
+
+      <button id="loginBtn" class="login-btn">
+        Start Smart Budgeting
+      </button>
+
+      <p class="login-footer">
+        Secure • No data stored externally
+      </p>
     </div>
-  `;
+
+  </div>
+`;
 
   document.getElementById("loginBtn").addEventListener("click", async () => {
     const userData = {
